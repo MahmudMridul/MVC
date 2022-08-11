@@ -26,13 +26,31 @@ namespace MVC.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //[ValidateAntiForgeryToken] //for built in security
+        //public IActionResult Create(Category category)
+        //{
+        //    if(ModelState.IsValid)
+        //    {
+        //        _database.Categories.Add(category);
+        //        _database.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(category);
+        //}
+
+        //using client side validation so commented server side validation 
+        //client side validation is in create page 
+
         [HttpPost]
         [ValidateAntiForgeryToken] //for built in security
         public IActionResult Create(Category category)
         {
+            
             _database.Categories.Add(category);
-            _database.SaveChanges(); 
+            _database.SaveChanges();
             return RedirectToAction("Index");
+            
         }
     }
 }

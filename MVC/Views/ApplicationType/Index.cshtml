@@ -10,7 +10,7 @@
 
         <div class="col-6 text-right">
             <a asp-controller="ApplicationType" asp-action="Create" class="btn btn-primary">
-                Create New Application Type
+                Create Application Type
             </a>
         </div>
 
@@ -25,9 +25,6 @@
             <thead>
                 <tr>
                     <th>
-                        ID
-                    </th>
-                    <th>
                         Name
                     </th>
                     <th></th>
@@ -40,10 +37,7 @@
                 {
                     <tr>
 
-                        <td width="50%">
-                            @applicationType.Id
-                        </td>
-                        <td width="30%">
+                        <td width="80%">
                             @applicationType.Name
                         </td>
                         <td></td>
