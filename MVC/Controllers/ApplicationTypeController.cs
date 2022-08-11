@@ -21,5 +21,19 @@ namespace MVC.Controllers
             IEnumerable<ApplicationType> applicationTypes = _database.ApplicationTypes;
             return View(applicationTypes);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ApplicationType applicationType)
+        {
+            _database.ApplicationTypes.Add(applicationType);
+            _database.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
